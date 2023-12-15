@@ -25,6 +25,7 @@ new class extends Component {
                 'body' => $validated['noteBody'],
                 'recipient' => $validated['noteRecipient'],
                 'send_date' => $validated['noteSendDate'],
+                'is_published'=>true,
             ]);
 
             $this->redirect(
@@ -41,7 +42,7 @@ new class extends Component {
             placeholder='example@gmail.com' />
         <x-input icon='calendar' wire:model='noteSendDate' type='date' label='Send Date' />
         <div class="pt-4">
-            <x-button primary right-icon='calendar' wire:click='submit' spinner>Schedule Note</x-button>
+            <x-button primary right-icon='calendar' type="submit" spinner>Schedule Note</x-button>
         </div>
 
     </form>

@@ -11,6 +11,8 @@ new class extends Component {
         $note->delete();
     }
     
+  
+    
     public function with(): array
     {
         return [
@@ -42,7 +44,7 @@ new class extends Component {
                     <x-card wire:key='{{ $note->id }}'>
                         <div class="flex justify-between">
                             <div>
-                                <a href="{{ route('notes.edit',$note) }}" wire:navigate
+                                <a href="{{ route('notes.edit', $note) }}" wire:navigate
                                     class="text-xl font-bold hover:underline hover:text-blue-500">{{ $note->title }}</a>
                                 <p class="mt-2 text-xs">{{ Str::limit($note->body, 50) }}</p>
 
@@ -55,7 +57,8 @@ new class extends Component {
                             <p class="text-xs">Receipient <span class="font-semibold">{{ $note->recipient }}</span></p>
                             <div>
                                 <x-button.circle icon="eye"></x-button.circle>
-                                <x-button.circle icon="trash" wire:click="delete('{{ $note->id }}')"></x-button.circle>
+                                <x-button.circle icon="trash"
+                                    wire:click="delete('{{ $note->id }}')"></x-button.circle>
                             </div>
                         </div>
                     </x-card>
